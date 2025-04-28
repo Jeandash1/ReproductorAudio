@@ -3,9 +3,10 @@ package org.reproducir.Models;
 public class Audio {
 
     private String titulo;
-    private String autor;
-    private String meGusta;
+    private int TotalmeGusta;
     private int duracionSegundos;
+    private int calificacion;
+    private int totalReproduciones;
 
     public String getTitulo() {
         return titulo;
@@ -13,17 +14,11 @@ public class Audio {
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
-    public String getAutor() {
-        return autor;
+    public int getTotalmeGusta() {
+        return TotalmeGusta;
     }
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
-    public String getMeGusta() {
-        return meGusta;
-    }
-    public void setMeGusta(String meGusta) {
-        this.meGusta = meGusta;
+    public void setTotalmeGusta(int totalmeGusta) {
+        this.TotalmeGusta++;
     }
     public int getDuracionSegundos() {
         return duracionSegundos;
@@ -32,11 +27,30 @@ public class Audio {
         this.duracionSegundos = duracionSegundos;
     }
 
-    public void reproducir(){
-        System.out.println("Titulo: " + titulo );
-        System.out.println("Cantante " + autor );
-        System.out.println("Tiempo del audio " + duracionSegundos + "segundos");
+    public int getCalificacion() {
+        return calificacion;
+    }
+    public void setCalificacion(int calificacion) {
+        this.calificacion = calificacion;
+    }
+    public int getTotalReproduciones() {
+        return totalReproduciones;
+    }
+    public void setTotalReproduciones(int totalReproduciones) {
+        this.totalReproduciones = totalReproduciones;
     }
     
+    public void escuchar(){
+        System.out.println("Titulo: " + titulo );
+        System.out.println("Tiempo del audio " + duracionSegundos + "segundos");
+    }
 
+    public void meGusta(){
+        this.TotalmeGusta++;
+    }
+    
+    public void reproduciones(){
+        this.totalReproduciones++;
+    }
+    
 }
